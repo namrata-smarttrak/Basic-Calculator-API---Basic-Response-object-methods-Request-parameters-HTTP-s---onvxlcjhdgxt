@@ -30,6 +30,14 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
 res.send("Hello World!");
 });
+app.get("/api/users", (req, res)=>{
+    const users = [
+        {name: "John", age: 30},
+        {name: "Jane", age: 25},
+        {name: "Bob", age: 35}
+    ]
+    res.send(users);
+})
 app.post("/add", (req, res) => {
 const num1 = req.body.num1;
 const num2 = req.body.num2;
